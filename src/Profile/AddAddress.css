@@ -1,0 +1,102 @@
+/* Overlay and Popup Styling */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better focus on form */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is on top of other content */
+}
+
+.popup-content {
+    background-color: white; /* Crisp white background */
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    max-width: 450px;
+    width: calc(100% - 40px); /* Responsive with padding from the viewport */
+    animation: slideDown 0.4s ease-out forwards; /* Smooth slide down transition */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Typography */
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+/* Button Styling */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 48%; /* Slightly less than half to fit two buttons */
+}
+
+.add-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Layout */
+@media (max-width: 600px) {
+    .popup-content {
+        padding: 20px;
+        width: calc(100% - 20px); /* Smaller padding on smaller screens */
+    }
+}

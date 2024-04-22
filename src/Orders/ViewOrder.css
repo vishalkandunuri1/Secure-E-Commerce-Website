@@ -1,0 +1,135 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Table Styles */
+table {
+    width: 96%; /* Slightly reduced width for aesthetics */
+    margin: 2% auto; /* Centering the table */
+    border-collapse: collapse; /* Ensures borders are neat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    background: white; /* Clean white background for contrast */
+}
+
+th, td {
+    padding: 12px 15px; /* Ample padding for readability */
+    border-bottom: 1px solid #ddd; /* Subtle separation between rows */
+}
+
+th {
+    background-color: #009688; /* Teal background for headers */
+    color: white; /* White text for contrast */
+    text-align: left;
+}
+/* Header Styles */
+h2 {
+    text-align: center;
+    background-color: #009688; /* Teal color to match table headers */
+    color: white;
+    padding: 10px 0;
+    border-radius: 6px;
+    margin: 20px 2% 10px; /* Matching table margins */
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+.close:hover {
+    color: #000;
+}
+
+
+.status-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.status-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 75%;
+  background-color: #ccc; 
+  position: relative;
+}
+
+.status-dot.active {
+  background-color: #4CAF50; 
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  transform: translateY(-50%);
+}
+
+.status-dot:last-child::after {
+  display: none; 
+}
+
+.status-dot.completed::after {
+  background-color: #4CAF50; 
+}
+
+.status-text {
+  position: absolute;
+  width: 100px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Button Styling */
+button {
+    background-color: #4CAF50; /* Green for positive actions */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #367c39;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 80%; /* More screen usage on smaller devices */
+    }
+
+    table, th, td {
+        font-size: 14px; /* Smaller text for smaller screens */
+    }
+}
